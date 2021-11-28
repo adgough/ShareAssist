@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <PackageLicenseFile></PackageLicenseFile>
+    <ApplicationIcon>targetWindow.ico</ApplicationIcon>
+    <Copyright>MIT</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\folder-open.png" />
+    <None Remove="Icons\image-size-select-large.png" />
+    <None Remove="Icons\music-clef-treble.png" />
+    <None Remove="Icons\panorama-variant-outline.png" />
+    <None Remove="Icons\play-circle.png" />
+    <None Remove="Icons\play-pause.png" />
+    <None Remove="Icons\send-clock.png" />
+    <None Remove="Icons\skip-next-circle.png" />
+    <None Remove="Icons\stop-circle.png" />
+    <None Remove="Icons\target-variant.png" />
+    <None Remove="Icons\targetWindow.ico" />
+    <None Remove="Icons\targetWindow.png" />
+    <None Remove="Icons\transparent.png" />
+    <None Remove="Icons\video-vintage.png" />
+    <None Remove="Icons\volume-high.png" />
+    <None Remove="Icons\zm.png" />
+    <None Remove="Images\audio-graphic.png" />
+    <None Remove="targetWindow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icons\folder-open.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\image-size-select-large.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\music-clef-treble.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\panorama-variant-outline.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\play-circle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\play-pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\send-clock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\skip-next-circle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\stop-circle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\target-variant.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\transparent.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\video-vintage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\volume-high.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\zm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\audio-graphic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="non-build Resources\Docs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\targetWindow.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\targetWindow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="targetWindow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="non-build Resources\zm.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32mm"
+   height="32mm"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:#4169e1;fill-opacity:1;stroke:none;stroke-width:9.99996;stroke-linecap:round;stroke-linejoin:bevel;stop-color:#000000"
+       id="rect3418"
+       width="12.586706"
+       height="21.136946"
+       x="13.539577"
+       y="1.7094955"
+       ry="1.3840146" />
+    <rect
+       style="fill:#000000;stroke:none;stroke-width:9.99996;stroke-linecap:round;stroke-linejoin:bevel;stop-color:#000000"
+       id="rect846"
+       width="15.158485"
+       height="14.268767"
+       x="1.9660463"
+       y="5.1169643"
+       ry="2.7369444" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.01598px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="3.5528743"
+       y="15.173188"
+       id="text1634"><tspan
+         id="tspan1632"
+         style="fill:#ffffff;stroke-width:0.264583"
+         x="3.5528743"
+         y="15.173188">ZM</tspan></text>
+    <rect
+       style="fill:none;stroke:#ff6600;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+       id="rect3621"
+       width="8.0108261"
+       height="8.0108261"
+       x="19.778461"
+       y="19.930359"
+       ry="0" />
+    <path
+       style="fill:none;stroke:#ff6600;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 23.783873,17.581026 V 30.290504"
+       id="path4239" />
+    <path
+       style="fill:none;stroke:#ff6600;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 17.467646,23.935767 H 30.100099"
+       id="path4241" />
+  </g>
+</svg>

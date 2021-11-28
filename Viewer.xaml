@@ -1,0 +1,58 @@
+﻿<Window x:Class="ZooMed2.Viewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZooMed2"
+        mc:Ignorable="d"
+        Title="Viewer" Height="480" Width="854"
+        WindowStyle="None"
+        Background="Black"
+        MouseEnter="HandleShow"
+        MouseLeave="HandleHide"
+        ResizeMode="NoResize"
+        Activated="Window_Activated" Icon="/Icons/targetWindow.png" 
+        
+        >
+    <Border BorderBrush="AliceBlue" BorderThickness="1">
+        
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            
+
+            <MediaElement x:Name="Player"
+                          LoadedBehavior="Stop"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Margin="0,0,0,0"
+                          Source=""
+                          Visibility="Visible" Canvas.Left="0"
+                          />
+
+            <Image x:Name="ImagePlayer"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch"
+                   Margin="0,0,0,0"
+                   Visibility="Visible"
+                   Source="/Icons/play-circle.png">
+            </Image>
+
+            <Label
+                x:Name="Handle"
+                Content="▣"
+                Background="RoyalBlue"
+                Foreground="white"
+                Width="30"
+                Height="30"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Visibility="Visible"
+                Canvas.ZIndex="999"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="ScrollAll"
+                ToolTip="Move viewer window (click-and-drag)" MouseLeftButtonDown="HandleDrag"
+                />
+
+        </Grid>
+    </Border>
+</Window>
