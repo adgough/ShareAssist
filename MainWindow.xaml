@@ -513,7 +513,7 @@
                             <!-- checklist items go in 'ere -->
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="5">
-                            <Button Padding="3" Click="addChecklistItem">Add Item</Button>
+                            <Button Background="LightGreen" Padding="3" Click="addChecklistItem">Add Item</Button>
                         </StackPanel>
                     </StackPanel>
                     </ScrollViewer>
