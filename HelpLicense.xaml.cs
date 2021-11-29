@@ -38,8 +38,7 @@ namespace ShareAssist
                 string mdText = reader.ReadToEnd();
                 string result = Markdown.ToHtml(mdText);
 
-                string header = "ShareAssist version 1.0 <br><br> For help/how-to see <a target='new' href='https://adgough.alwaysdata.net/ShareAssist/'>adgough.alwaysdata.net</a>.<br>";
-                licenseBox.NavigateToString(header + result);
+                licenseBox.NavigateToString(result);
             }
 
         }
