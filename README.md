@@ -1,8 +1,8 @@
-# ZooMed
+# ShareAssist
 
 ## Licenses
 
-> ### ZooMed2 License file
+> ### ShareAssist License file
 > The MIT License (MIT)
 >
 > Copyright (c) 2021 Alexander Gough

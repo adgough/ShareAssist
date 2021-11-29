@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace ZooMed2
+namespace ShareAssist
 {
     /// <summary>
     /// Interaction logic for Viewer.xaml

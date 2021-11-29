@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace ZooMed2
+namespace ShareAssist
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -10,6 +10,8 @@
     <Version>1.0.0</Version>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
+    <AssemblyName>ShareAssist</AssemblyName>
+    <RootNamespace>ShareAssist</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +30,6 @@
     <None Remove="Icons\transparent.png" />
     <None Remove="Icons\video-vintage.png" />
     <None Remove="Icons\volume-high.png" />
-    <None Remove="Icons\zm.png" />
     <None Remove="Images\audio-graphic.png" />
     <None Remove="README.md" />
     <None Remove="targetWindow.png" />
@@ -72,9 +73,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\volume-high.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Icons\zm.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\audio-graphic.png">
