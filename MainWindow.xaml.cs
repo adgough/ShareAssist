@@ -263,7 +263,7 @@ namespace ZooMed2
             DragMove();
         }
 
-        private void Border_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void CloseButton_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -426,6 +426,11 @@ namespace ZooMed2
             textbox.FontWeight = FontWeights.Normal;
         }
 
+        private void HelpOpen(object sender, MouseButtonEventArgs e)
+        {
+            HelpLicense helpLicense = new HelpLicense();
+            helpLicense.Show();
+        }
     }
     #endregion
 }

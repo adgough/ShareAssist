@@ -7,6 +7,9 @@
     <PackageLicenseFile></PackageLicenseFile>
     <ApplicationIcon>targetWindow.ico</ApplicationIcon>
     <Copyright>MIT</Copyright>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +30,7 @@
     <None Remove="Icons\volume-high.png" />
     <None Remove="Icons\zm.png" />
     <None Remove="Images\audio-graphic.png" />
+    <None Remove="README.md" />
     <None Remove="targetWindow.png" />
   </ItemGroup>
 
@@ -79,6 +83,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.26.0" />
     <PackageReference Include="NAudio" Version="2.0.1" />
   </ItemGroup>
 
