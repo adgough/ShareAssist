@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using System.Reflection;
+using Markdig;
 
 namespace ZooMed2
 {
@@ -33,10 +34,15 @@ namespace ZooMed2
 
             using (StreamReader reader = new StreamReader(stream))
             {
-                string result = reader.ReadToEnd();
-                licenseBox.Text = result;
+                
+                string mdText = reader.ReadToEnd();
+                string result = Markdown.ToHtml(mdText);
+
+                string header = "ZooMed version 1.0 <br><br> For help/how-to see <a target='new' href='https://adgough.alwaysdata.net/ZooMed/'>adgough.alwaysdata.net</a>.<br>";
+                licenseBox.NavigateToString(header + result);
             }
 
         }
+
     }
 }
