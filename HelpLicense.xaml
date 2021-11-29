@@ -6,18 +6,22 @@
         xmlns:local="clr-namespace:ZooMed2"
         mc:Ignorable="d"
         Title="HelpLicense" Height="400" Width="300">
-    <Grid>
+    <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock  Grid.Row="0" Text="ZooMed version 1.0"></TextBlock>
+        <TextBlock  Grid.Row="0" Text="ZooMed version 1.0" Margin="5"></TextBlock>
         <TabControl Grid.Row="1">
             <TabItem Header="Help / How To">
                 
             </TabItem>
-            <TabItem Header="About"></TabItem>
+            <TabItem Header="License info">
+                <ScrollViewer>
+                    <TextBlock Name="licenseBox" Text="" TextWrapping="Wrap" Initialized="TextBlock_Initialized"></TextBlock>
+                </ScrollViewer>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

@@ -23,7 +23,6 @@ namespace ZooMed2
     public partial class MainWindow : Window
     {
         static Viewer viewer = new Viewer();
-        static HelpLicense helpLicense = new HelpLicense();
 
         Env env = new Env { ViewerHeight = 480 };
 
@@ -429,6 +428,7 @@ namespace ZooMed2
 
         private void HelpOpen(object sender, MouseButtonEventArgs e)
         {
+            HelpLicense helpLicense = new HelpLicense();
             helpLicense.Show();
         }
     }
