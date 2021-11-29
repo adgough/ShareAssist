@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace ZooMed2
+namespace ShareAssist
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

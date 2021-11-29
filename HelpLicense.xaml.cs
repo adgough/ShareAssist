@@ -13,7 +13,7 @@ using System.IO;
 using System.Reflection;
 using Markdig;
 
-namespace ZooMed2
+namespace ShareAssist
 {
     /// <summary>
     /// Interaction logic for HelpLicense.xaml
@@ -28,7 +28,7 @@ namespace ZooMed2
         private void TextBlock_Initialized(object sender, EventArgs e)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "ZooMed2.README.md";
+            var resourceName = "ShareAssist.README.md";
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 
@@ -38,7 +38,7 @@ namespace ZooMed2
                 string mdText = reader.ReadToEnd();
                 string result = Markdown.ToHtml(mdText);
 
-                string header = "ZooMed version 1.0 <br><br> For help/how-to see <a target='new' href='https://adgough.alwaysdata.net/ZooMed/'>adgough.alwaysdata.net</a>.<br>";
+                string header = "ShareAssist version 1.0 <br><br> For help/how-to see <a target='new' href='https://adgough.alwaysdata.net/ShareAssist/'>adgough.alwaysdata.net</a>.<br>";
                 licenseBox.NavigateToString(header + result);
             }
 
