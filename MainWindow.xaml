@@ -104,7 +104,7 @@
                 </Grid>
             </GroupBox>
             <TabControl Grid.Row="2" Margin="5,5,5,5">
-                <TabItem Header="Files" Margin="-2,-2,-2,0">
+                <TabItem Header="Files">
                     <ScrollViewer VerticalScrollBarVisibility="Visible">
                         <StackPanel Orientation="Vertical">
                             <Grid>
