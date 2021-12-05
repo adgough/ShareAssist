@@ -177,7 +177,7 @@ namespace ShareAssist
         private void TargetButton(object sender, RoutedEventArgs e)
         {
             currentTargetId = tagGetter(sender);
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 Button button = (Button)FindName("Target" + i);
                 if (i == currentTargetId) { button.Background = Brushes.Orange; }
