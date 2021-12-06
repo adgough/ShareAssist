@@ -37,8 +37,9 @@ namespace ShareAssist
                 
                 string mdText = reader.ReadToEnd();
                 string result = Markdown.ToHtml(mdText);
+                string style = "<head><style>* { font-family: 'sans-serif'; }</style></head>";
 
-                licenseBox.NavigateToString(result);
+                licenseBox.NavigateToString(style + result);
             }
 
         }
