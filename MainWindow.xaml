@@ -427,6 +427,326 @@
                                     </Grid>
                                 </Border>
                             </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="10" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon10" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title10" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target10" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="10"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="11" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon11" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title11" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target11" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="11"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="12" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon12" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title12" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target12" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="12"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="13" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon13" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title13" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target13" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="13"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="14" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon14" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title14" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target14" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="14"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="15" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon15" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title15" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target15" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="15"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="16" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon16" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title16" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target16" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="16"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="17" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon17" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title17" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target17" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="17"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="18" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon18" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title18" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target18" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="18"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonStyle}" Tag="19" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file..." Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                    <Image Source="/Icons/folder-open.png"/>
+                                </Button>
+                                <Border Grid.Column="1"
+                                BorderBrush="DarkGray" BorderThickness="1" Margin="5,5,5,5" Padding="5,5,5,5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,5,0">
+                                            <Image x:Name="Icon19" Source="/Icons/transparent.png" Width="20" Height="20" Margin="5,0,0,0"></Image>
+                                            <Label x:Name="Title19" Content="(no file)" Margin="0,0,5,0" VerticalAlignment="Center"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <Button x:Name="Target19" Style="{StaticResource ButtonStyle}"
+                                        Background="LightGray"
+                                        Click="TargetButton" Tag="19"
+                                        ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
+                                                <Image Source="/Icons/target-variant.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
 
 
 
