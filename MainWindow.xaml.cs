@@ -23,6 +23,7 @@ namespace ShareAssist
     public partial class MainWindow : Window
     {
         static Viewer viewer = new Viewer();
+        public static MainWindow controlPanel;
 
         Env env = new Env { ViewerHeight = 480 };
 
@@ -32,6 +33,7 @@ namespace ShareAssist
         {
             InitializeComponent();
             this.DataContext = env;
+            controlPanel = this;
             viewer.Show();
 
             viewer.Left = 10;

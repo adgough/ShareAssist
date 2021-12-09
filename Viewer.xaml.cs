@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace ShareAssist
 {
@@ -29,7 +30,12 @@ namespace ShareAssist
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            if (MainWindow.armed) { MainWindow.Play(); }
+            if (MainWindow.armed)
+            {
+                MainWindow.Play();
+                MainWindow.armed = false;
+                MainWindow.controlPanel.ArmButton.Background = Brushes.LightGray;
+            }
         }
     }
 }
