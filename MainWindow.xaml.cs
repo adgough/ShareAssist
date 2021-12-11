@@ -136,13 +136,23 @@ namespace ShareAssist
                 string ext = Path.GetExtension(targetArray[tag].ToString());
                 switch (ext)
                 {
-                    case ".mp4":  { setupVideo(); break; }
-                    case ".mp3":  { setupAudio(); break; }
-                    case ".jpg":  { setupImage(); break; }
-                    case ".jpeg": { setupImage(); break; }
-                    case ".jfif": { setupImage(); break; }
-                    case ".png":  { setupImage(); break; }
-                    case ".gif":  { setupImage(); break; }
+                    case ".mp4":
+                    case ".MP4":
+                        { setupVideo(); break; }
+                    case ".mp3":
+                    case ".MP3":
+                        { setupAudio(); break; }
+                    case ".jpg":
+                    case ".JPG":
+                    case ".jpeg":
+                    case ".JPEG":
+                    case ".jfif":
+                    case ".JFIF":
+                    case ".png":
+                    case ".PNG":
+                    case ".gif":
+                    case ".GIF":
+                        { setupImage(); break; }
 
                     default: { MessageBox.Show("Can't use filetype " + ext + ", sorry!"); return; };
                 }
