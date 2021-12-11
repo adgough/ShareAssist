@@ -133,25 +133,18 @@ namespace ShareAssist
                 StackPanel spanel = (StackPanel)label.Parent;
                 Image icon = (Image)FindName("Icon" + tag.ToString());
 
-                string ext = Path.GetExtension(targetArray[tag].ToString());
+                string ext = Path.GetExtension(targetArray[tag].ToString()).ToLower();
                 switch (ext)
                 {
                     case ".mp4":
-                    case ".MP4":
                         { setupVideo(); break; }
                     case ".mp3":
-                    case ".MP3":
                         { setupAudio(); break; }
                     case ".jpg":
-                    case ".JPG":
                     case ".jpeg":
-                    case ".JPEG":
                     case ".jfif":
-                    case ".JFIF":
                     case ".png":
-                    case ".PNG":
                     case ".gif":
-                    case ".GIF":
                         { setupImage(); break; }
 
                     default: { MessageBox.Show("Can't use filetype " + ext + ", sorry!"); return; };
