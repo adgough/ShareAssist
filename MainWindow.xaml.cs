@@ -265,6 +265,7 @@ namespace ShareAssist
         private void StopButton(object sender, RoutedEventArgs e)
         {
             viewer.Player.LoadedBehavior = MediaState.Close;
+            viewer.ImagePlayer.Visibility = Visibility.Hidden;
 
         }
 
