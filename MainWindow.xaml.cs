@@ -118,6 +118,21 @@ namespace ShareAssist
         }
 
 
+        private void Button_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            int tag = tagGetter(sender);
+            targetArray[tag] = null;
+            titleArray[tag] = "(no file)";
+            Label label = (Label)FindName("Title" + tag.ToString());
+            label.Content = titleArray[tag];
+            StackPanel spanel = (StackPanel)label.Parent;
+            Image icon = (Image)FindName("Icon" + tag.ToString());
+            icon.Source = null;
+            spanel.Background = Brushes.White;
+            typesArray[tag] = "none";
+
+        }
+
         private void Loader(object sender, RoutedEventArgs e)
         {
             int tag = tagGetter(sender);
@@ -436,6 +451,8 @@ namespace ShareAssist
             HelpLicense helpLicense = new HelpLicense();
             helpLicense.Show();
         }
+
+        
     }
     #endregion
 }
