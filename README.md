@@ -1,5 +1,5 @@
 # ShareAssist
-ShareAssist v1.2
+ShareAssist v1.3
 
 
 ## Licenses
