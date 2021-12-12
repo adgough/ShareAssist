@@ -25,7 +25,7 @@ namespace ShareAssist
         static Viewer viewer = new Viewer();
         public static MainWindow controlPanel;
 
-        Env env = new Env { ViewerHeight = 480 };
+        Env env = new Env { ViewerHeight = 360 };
 
 
 
