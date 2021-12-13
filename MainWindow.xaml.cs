@@ -14,6 +14,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Input;
+using Microsoft.VisualBasic.FileIO;
+using Newtonsoft.Json;
 
 namespace ShareAssist
 {
@@ -27,6 +29,7 @@ namespace ShareAssist
 
         Env env = new Env { ViewerHeight = 360 };
 
+        static Settings settings = new Settings();
 
 
         public MainWindow()
@@ -46,8 +49,25 @@ namespace ShareAssist
             timer.Tick += timer_Tick;
             timer.Start();
 
+            //config file
+            if (File.Exists("ShareAssist.json"))
+            {
+                string jsonText = File.ReadAllText("ShareAssist.json");
+                settings = JsonConvert.DeserializeObject<Settings>(jsonText);
+                env.ViewerHeight = int.Parse(settings.Size);
+                
+            }
+            else
+            {
+                File.Create("ShareAssist.json");
+            }
+
         }
 
+        class Settings
+        {
+            public string Size { get; set; }
+        }
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -55,6 +75,8 @@ namespace ShareAssist
         }
         private void Window_Closed(object sender, EventArgs e)
         {
+            string output = JsonConvert.SerializeObject(settings);
+            File.WriteAllText("ShareAssist.json", output);
             Application.Current.Shutdown();
         }
 
@@ -78,6 +100,7 @@ namespace ShareAssist
                 {
                     viewerHeightValue = value;
                     viewer.Height = value;
+                    settings.Size = value.ToString();
                     viewer.Width = ViewerWidth;
                     OnPropertyChanged();
                 }
