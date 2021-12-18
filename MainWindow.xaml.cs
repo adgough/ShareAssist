@@ -144,6 +144,19 @@ namespace ShareAssist
         private void Button_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             int tag = tagGetter(sender);
+            fileWiper(tag);
+            
+        }
+        private void clearAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                fileWiper(i);
+            }
+        }
+
+        void fileWiper(int tag)
+        {
             targetArray[tag] = null;
             titleArray[tag] = "(no file)";
             Label label = (Label)FindName("Title" + tag.ToString());
@@ -153,7 +166,6 @@ namespace ShareAssist
             icon.Source = null;
             spanel.Background = Brushes.White;
             typesArray[tag] = "none";
-
         }
 
         private void Loader(object sender, RoutedEventArgs e)
@@ -476,7 +488,6 @@ namespace ShareAssist
             helpLicense.Show();
         }
 
-        
     }
     #endregion
 }
