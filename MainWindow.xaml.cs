@@ -144,6 +144,19 @@ namespace ShareAssist
         private void Button_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             int tag = tagGetter(sender);
+            fileWiper(tag);
+            
+        }
+        private void clearAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                fileWiper(i);
+            }
+        }
+
+        void fileWiper(int tag)
+        {
             targetArray[tag] = null;
             titleArray[tag] = "(no file)";
             Label label = (Label)FindName("Title" + tag.ToString());
@@ -153,10 +166,9 @@ namespace ShareAssist
             icon.Source = null;
             spanel.Background = Brushes.White;
             typesArray[tag] = "none";
-
         }
 
-        private void Loader(object sender, RoutedEventArgs e)
+        private void singleLoader(object sender, RoutedEventArgs e)
         {
             int tag = tagGetter(sender);
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -164,58 +176,92 @@ namespace ShareAssist
             if (openFileDialog.ShowDialog() == true)
             {
                 Uri path = new Uri(openFileDialog.FileName);
-                targetArray[tag] = path;
-                titleArray[tag] = Path.GetFileName(path.LocalPath);
-                Label label = (Label)FindName("Title" + tag.ToString());
-                label.Content = titleArray[tag];
-                StackPanel spanel = (StackPanel)label.Parent;
-                Image icon = (Image)FindName("Icon" + tag.ToString());
+                setterUpper(path, tag);
+            }
+        }
 
-                string ext = Path.GetExtension(targetArray[tag].ToString()).ToLower();
-                switch (ext)
+        private void folderLoaderButton(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                for (int i = 0; i < 20; i++)
                 {
-                    case ".mp4":
-                        { setupVideo(); break; }
-                    case ".mp3":
-                        { setupAudio(); break; }
-                    case ".jpg":
-                    case ".jpeg":
-                    case ".jfif":
-                    case ".png":
-                    case ".gif":
-                        { setupImage(); break; }
-
-                    default: { MessageBox.Show("Can't use filetype " + ext + ", sorry!"); return; };
+                    fileWiper(i);
                 }
-
-                void setupVideo()
+                string[] files = Directory.GetFiles(folderDialog.SelectedPath);
+                for (int x=0; x<Math.Min(files.Length, 20); x++)
                 {
-                    typesArray[tag] = "video";
-                    if (titleArray[tag].Contains("sjjm") || titleArray[tag].Contains("song") || titleArray[tag].Contains("Song"))
-                    {
-                        spanel.Background = Brushes.DeepSkyBlue;
-                        icon.Source = new BitmapImage(new Uri("/Icons/music-clef-treble.png", UriKind.Relative));
-                    }
-                    else 
-                    {
-                        spanel.Background = Brushes.LightCyan;
-                        icon.Source = new BitmapImage(new Uri("/Icons/video-vintage.png", UriKind.Relative));
-                    }
-                }
-                void setupImage()
-                {
-                    typesArray[tag] = "image";
-                    spanel.Background = Brushes.PeachPuff;
-                    icon.Source = new BitmapImage(new Uri("/Icons/panorama-variant-outline.png", UriKind.Relative));
-                }
-                void setupAudio()
-                {
-                    typesArray[tag] = "audio";
-                    spanel.Background = Brushes.PaleGreen;
-                    icon.Source = new BitmapImage(new Uri("/Icons/volume-high.png", UriKind.Relative));
+                    setterUpper(new Uri(files[x]), x);
                 }
             }
         }
+                
+        void setterUpper(Uri path, int tag)
+        {
+            targetArray[tag] = path;
+            TagLib.File tfile = TagLib.File.Create(path.LocalPath);
+            string TagLibTitle = tfile.Tag.Title;
+            if (TagLibTitle == null)
+            {
+                titleArray[tag] = Path.GetFileName(path.LocalPath);
+            } else
+            {
+                titleArray[tag] = TagLibTitle;
+            }
+
+            
+            Label label = (Label)FindName("Title" + tag.ToString());
+            label.Content = titleArray[tag];
+            
+            StackPanel spanel = (StackPanel)label.Parent;
+            Image icon = (Image)FindName("Icon" + tag.ToString());
+
+            string ext = Path.GetExtension(targetArray[tag].ToString()).ToLower();
+            switch (ext)
+            {
+                case ".mp4":
+                    { setupVideo(); break; }
+                case ".mp3":
+                    { setupAudio(); break; }
+                case ".jpg":
+                case ".jpeg":
+                case ".jfif":
+                case ".png":
+                case ".gif":
+                    { setupImage(); break; }
+
+                default: { MessageBox.Show("Can't use filetype " + ext + ", sorry!"); return; };
+            }
+
+            void setupVideo()
+            {
+                typesArray[tag] = "video";
+                if (titleArray[tag].Contains("sjjm") || titleArray[tag].Contains("song") || titleArray[tag].Contains("Song"))
+                {
+                    spanel.Background = Brushes.DeepSkyBlue;
+                    icon.Source = new BitmapImage(new Uri("/Icons/music-clef-treble.png", UriKind.Relative));
+                }
+                else 
+                {
+                    spanel.Background = Brushes.LightCyan;
+                    icon.Source = new BitmapImage(new Uri("/Icons/video-vintage.png", UriKind.Relative));
+                }
+            }
+            void setupImage()
+            {
+                typesArray[tag] = "image";
+                spanel.Background = Brushes.PeachPuff;
+                icon.Source = new BitmapImage(new Uri("/Icons/panorama-variant-outline.png", UriKind.Relative));
+            }
+            void setupAudio()
+            {
+                typesArray[tag] = "audio";
+                spanel.Background = Brushes.PaleGreen;
+                icon.Source = new BitmapImage(new Uri("/Icons/volume-high.png", UriKind.Relative));
+            }
+        }
+        
 
         private void TargetButton(object sender, RoutedEventArgs e)
         {
@@ -476,7 +522,6 @@ namespace ShareAssist
             helpLicense.Show();
         }
 
-        
     }
     #endregion
 }
