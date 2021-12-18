@@ -200,6 +200,7 @@ namespace ShareAssist
         void setterUpper(Uri path, int tag)
         {
             targetArray[tag] = path;
+            
             TagLib.File tfile = TagLib.File.Create(path.LocalPath);
             string TagLibTitle = tfile.Tag.Title;
             if (TagLibTitle == null)
@@ -237,7 +238,7 @@ namespace ShareAssist
             void setupVideo()
             {
                 typesArray[tag] = "video";
-                if (titleArray[tag].Contains("sjjm") || titleArray[tag].Contains("song") || titleArray[tag].Contains("Song"))
+                if (targetArray[tag].ToString().Contains("sjjm") || titleArray[tag].Contains("song") || titleArray[tag].Contains("Song"))
                 {
                     spanel.Background = Brushes.DeepSkyBlue;
                     icon.Source = new BitmapImage(new Uri("/Icons/music-clef-treble.png", UriKind.Relative));
