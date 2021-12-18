@@ -200,9 +200,20 @@ namespace ShareAssist
         void setterUpper(Uri path, int tag)
         {
             targetArray[tag] = path;
-            titleArray[tag] = Path.GetFileName(path.LocalPath);
+            TagLib.File tfile = TagLib.File.Create(path.LocalPath);
+            string TagLibTitle = tfile.Tag.Title;
+            if (TagLibTitle == null)
+            {
+                titleArray[tag] = Path.GetFileName(path.LocalPath);
+            } else
+            {
+                titleArray[tag] = TagLibTitle;
+            }
+
+            
             Label label = (Label)FindName("Title" + tag.ToString());
             label.Content = titleArray[tag];
+            
             StackPanel spanel = (StackPanel)label.Parent;
             Image icon = (Image)FindName("Icon" + tag.ToString());
 
