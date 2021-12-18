@@ -109,14 +109,14 @@
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
                                 <Button Background="NavajoWhite" x:Name="clearAllButton" Padding="5,2,5,2" Click="clearAllButton_Click">Clear all</Button>
-                                <Button Padding="5,2,5,2" Margin="5,0,0,0">Load all in folder...</Button>
+                                <Button Padding="5,2,5,2" Margin="5,0,0,0" Click="folderLoaderButton">Load all in folder...</Button>
                             </StackPanel>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="0" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="0" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -148,7 +148,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="1" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="1" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -180,7 +180,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="2" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="2" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -212,7 +212,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="3" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="3" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -244,7 +244,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="4" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="4" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -276,7 +276,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="5" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="5" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -308,7 +308,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="6" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="6" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -340,7 +340,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="7" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="7" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -372,7 +372,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="8" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="8" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -404,7 +404,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="9" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="9" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -436,7 +436,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="10" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="10" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -468,7 +468,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="11" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="11" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -500,7 +500,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="12" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="12" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -532,7 +532,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="13" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="13" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -564,7 +564,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="14" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="14" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -596,7 +596,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="15" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="15" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -628,7 +628,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="16" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="16" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -660,7 +660,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="17" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="17" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -692,7 +692,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="18" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="18" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"
@@ -724,7 +724,7 @@
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource ButtonStyle}" Tag="19" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="Loader">
+                                <Button Style="{StaticResource ButtonStyle}" Tag="19" Grid.Column="0" Background="LightGray" Margin="5,0,5,0" ToolTip="Select file... (Right-click to clear)" MouseRightButtonUp="Button_MouseRightButtonUp" Width="32" Height="32" Padding="3,3,3,3" Click="singleLoader">
                                     <Image Source="/Icons/folder-open.png"/>
                                 </Button>
                                 <Border Grid.Column="1"

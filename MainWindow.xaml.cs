@@ -168,7 +168,7 @@ namespace ShareAssist
             typesArray[tag] = "none";
         }
 
-        private void Loader(object sender, RoutedEventArgs e)
+        private void singleLoader(object sender, RoutedEventArgs e)
         {
             int tag = tagGetter(sender);
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -177,6 +177,23 @@ namespace ShareAssist
             {
                 Uri path = new Uri(openFileDialog.FileName);
                 setterUpper(path, tag);
+            }
+        }
+
+        private void folderLoaderButton(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    fileWiper(i);
+                }
+                string[] files = Directory.GetFiles(folderDialog.SelectedPath);
+                for (int x=0; x<Math.Min(files.Length, 20); x++)
+                {
+                    setterUpper(new Uri(files[x]), x);
+                }
             }
         }
                 
