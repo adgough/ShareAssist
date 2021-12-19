@@ -23,6 +23,7 @@
     <None Remove="Icons\play-pause.png" />
     <None Remove="Icons\send-clock.png" />
     <None Remove="Icons\skip-next-circle.png" />
+    <None Remove="Icons\skip-previous-circle.png" />
     <None Remove="Icons\stop-circle.png" />
     <None Remove="Icons\target-variant.png" />
     <None Remove="Icons\targetWindow.ico" />
@@ -58,6 +59,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\skip-next-circle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\skip-previous-circle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\stop-circle.png">

@@ -262,11 +262,29 @@ namespace ShareAssist
                 icon.Source = new BitmapImage(new Uri("/Icons/volume-high.png", UriKind.Relative));
             }
         }
-        
+
 
         private void TargetButton(object sender, RoutedEventArgs e)
         {
             currentTargetId = tagGetter(sender);
+            TargetUpdater();
+        }
+
+        private void NextButton(object sender, RoutedEventArgs e)
+        {
+            if (currentTargetId == 19) { currentTargetId = 0; } else { currentTargetId++; }
+            TargetUpdater();
+            Play();
+        }
+        private void PrevButton(object sender, RoutedEventArgs e)
+        {
+            if (currentTargetId == 0) { currentTargetId = 19; } else { currentTargetId--; }
+            TargetUpdater();
+            Play();
+        }
+
+        void TargetUpdater()
+        {
             for (int i = 0; i < 20; i++)
             {
                 Button button = (Button)FindName("Target" + i);

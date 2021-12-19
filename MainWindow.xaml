@@ -79,6 +79,16 @@
                     </StackPanel>
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button Style="{StaticResource ButtonStyle}"
+                            ToolTip="Target and play Previous item" Width="32" Height="32" Margin="0,0,5,0"
+                            Click="PrevButton">
+                            <Image Source="/Icons/skip-previous-circle.png" />
+                        </Button>
+                        <Button Style="{StaticResource ButtonStyle}"
+                            ToolTip="Target and play Next item" Width="32" Height="32" Margin="0,0,5,0"
+                            Click="NextButton">
+                            <Image Source="/Icons/skip-next-circle.png" />
+                        </Button>
+                        <Button Style="{StaticResource ButtonStyle}"
                         Click="StopButton" Background="LightCoral"
                         ToolTip="Stop video." Width="32" Height="32" Margin="0,0,5,0">
                             <Image Source="/Icons/stop-circle.png" />
