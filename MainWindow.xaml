@@ -90,7 +90,7 @@
                         </Button>
                         <Button Style="{StaticResource ButtonStyle}"
                         Click="StopButton" Background="LightCoral"
-                        ToolTip="Stop video." Width="32" Height="32" Margin="0,0,5,0">
+                        ToolTip="Stop video / Hide image" Width="32" Height="32" Margin="0,0,5,0">
                             <Image Source="/Icons/stop-circle.png" />
                         </Button>
                         <Button Style="{StaticResource ButtonStyle}"
