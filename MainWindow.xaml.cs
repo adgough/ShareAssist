@@ -359,6 +359,7 @@ namespace ShareAssist
 
         private void PauseButton(object sender, RoutedEventArgs e)
         {
+            if (viewer.ImagePlayer.Visibility == Visibility.Visible) { return; }
             MediaState state = viewer.Player.LoadedBehavior;
             switch (state)
             {
