@@ -1,10 +1,12 @@
 # ShareAssist
-ShareAssist v1.3
+ShareAssist v1.4
 
 
 ## Licenses
 
 ### ShareAssist License file
+https://github.com/adgough/ShareAssist/
+
 The MIT License (MIT)
 
 Copyright (c) 2021 Alexander Gough
