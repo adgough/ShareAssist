@@ -121,7 +121,7 @@
                 </Grid>
             </GroupBox>
             <TabControl Grid.Row="2" Margin="5,5,5,5">
-                <TabItem Header="Files">
+                <TabItem Header="Files" Width="110">
                     <ScrollViewer VerticalScrollBarVisibility="Visible">
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
@@ -814,12 +814,12 @@
                         </StackPanel>
                     </ScrollViewer>
                 </TabItem>
-                <TabItem Header="Background Music">
-                    <StackPanel Orientation="Vertical" Margin="5,5,5,5">
-                        <Button Click="selectFolderButton" Content="Select new folder..."></Button>
-                        <Label x:Name="folderButtonText" Content="Current: none" Padding="0,5,5,5"></Label>
+                <TabItem Header="Background Music" Width="110" Background="Azure">
+                    <StackPanel Background="Azure" Orientation="Vertical" Margin="0">
+                        <Button Click="selectFolderButton" Content="Select new folder..." Margin="5"></Button>
+                        <Label x:Name="folderButtonText" Content="Current: none" Margin="5" Padding="0,5,0,5"></Label>
                         
-                        <StackPanel x:Name="controlsBG" Orientation="Vertical" Opacity="0.3">
+                        <StackPanel x:Name="controlsBG" Orientation="Vertical" Opacity="0.3" Margin="5">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -893,8 +893,8 @@
                         </StackPanel>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Checklist">
-                    <ScrollViewer>
+                <TabItem Header="Checklist" Width="110" Background="OldLace">
+                    <ScrollViewer Background="OldLace">
                     <StackPanel Orientation="Vertical">
                         <StackPanel x:Name="checkItemPanel" Orientation="Vertical">
                             <!-- checklist items go in 'ere -->
