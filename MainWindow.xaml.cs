@@ -190,9 +190,18 @@ namespace ShareAssist
                     fileWiper(i);
                 }
                 string[] files = Directory.GetFiles(folderDialog.SelectedPath);
+                
+                int y = 0;
                 for (int x=0; x<Math.Min(files.Length, 20); x++)
                 {
-                    setterUpper(new Uri(files[x]), x);
+                    string ext = Path.GetExtension(files[x]).ToLower();
+                    if (ext == ".mp3" || ext == ".mp4" || ext == ".jpg" || ext == ".jpeg" || ext == ".jfif" || ext == ".png" || ext == ".gif")
+                    {
+                        setterUpper(new Uri(files[x]), y);
+                        y++;
+                    }
+                    
+                    
                 }
             }
         }
