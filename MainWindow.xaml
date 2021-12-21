@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:ShareAssist"
         mc:Ignorable="d"
         Title="ShareAssist Controller" Height="450" Width="350"
+        MinWidth="350"
         Closed="Window_Closed" Loaded="Window_Loaded"
         WindowStyle="None"
-        ResizeMode="NoResize" Icon="targetWindow.png"
+        ResizeMode="CanResize" Icon="targetWindow.png"
     >
 
     <Window.Resources>
@@ -79,35 +80,35 @@
                     </StackPanel>
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button Style="{StaticResource ButtonStyle}"
-                            ToolTip="Target and play Previous item" Width="32" Height="32" Margin="0,0,5,0"
+                            ToolTip="Target and play Previous item" Width="28" Height="28" Margin="0,0,5,0"
                             Click="PrevButton">
                             <Image Source="/Icons/skip-previous-circle.png" />
                         </Button>
                         <Button Style="{StaticResource ButtonStyle}"
-                            ToolTip="Target and play Next item" Width="32" Height="32" Margin="0,0,5,0"
+                            ToolTip="Target and play Next item" Width="28" Height="28" Margin="0,0,5,0"
                             Click="NextButton">
                             <Image Source="/Icons/skip-next-circle.png" />
                         </Button>
                         <Button Style="{StaticResource ButtonStyle}"
                         Click="StopButton" Background="LightCoral"
-                        ToolTip="Stop video / Hide image" Width="32" Height="32" Margin="0,0,5,0">
+                        ToolTip="Stop video / Hide image" Width="28" Height="28" Margin="0,0,5,0">
                             <Image Source="/Icons/stop-circle.png" />
                         </Button>
                         <Button Style="{StaticResource ButtonStyle}"
                         Click="PauseButton" Background="PaleGoldenrod"
-                        ToolTip="Pause/Play video." Width="32" Height="32" Margin="0,0,5,0">
+                        ToolTip="Pause/Play video." Width="28" Height="28" Margin="0,0,5,0">
                             <Image Source="/Icons/play-pause.png" />
                         </Button>
                         <Button Style="{StaticResource ButtonStyle}"
                         Click="PlayButtonClick" Background="LightGreen"
-                        ToolTip="Play target item from start." Width="32" Height="32" Padding="3,3,3,3">
+                        ToolTip="Play target item from start." Width="28" Height="28" Padding="3,3,3,3">
                             <Image Source="/Icons/play-circle.png"/>
                         </Button>
                         <Button x:Name="ArmButton"
                             Style="{StaticResource ButtonStyle}"
                             Tag=""
                             Click="ArmButtonClick" Background="LightGray"
-                            ToolTip="Toggle target item armed (plays when viewer window gains focus)." Width="32" Height="32" Padding="3,3,3,3" Margin="5,0,0,0">
+                            ToolTip="Toggle target item armed (plays when viewer window gains focus)." Width="28" Height="28" Padding="3,3,3,3" Margin="5,0,0,0">
                             <Image Source="/Icons/send-clock.png" />
                         </Button>
                     </StackPanel>
