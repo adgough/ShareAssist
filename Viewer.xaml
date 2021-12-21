@@ -12,7 +12,7 @@
         MouseLeave="HandleHide"
         ResizeMode="NoResize"
         Activated="Window_Activated" Icon="/Icons/targetWindow.png" 
-        
+        ShowInTaskbar="True"
         >
     <Border BorderBrush="AliceBlue" BorderThickness="1">
         
