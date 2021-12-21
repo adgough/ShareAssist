@@ -153,6 +153,8 @@
                                             <Button x:Name="Target0" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="0"
+                                        MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -184,6 +186,8 @@
                                         <StackPanel Grid.Column="1" Orientation="Horizontal">
                                             <Button x:Name="Target1" Style="{StaticResource ButtonStyle}"
                                             Background="LightGray"
+                                            MouseEnter="PreviewStart"
+                                            MouseLeave="PreviewEnd"       
                                             Click="TargetButton" Tag="1"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
@@ -217,6 +221,8 @@
                                             <Button x:Name="Target2" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="2"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -249,6 +255,8 @@
                                             <Button x:Name="Target3" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="3"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -281,6 +289,8 @@
                                             <Button x:Name="Target4" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="4"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -313,6 +323,8 @@
                                             <Button x:Name="Target5" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="5"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -345,6 +357,8 @@
                                             <Button x:Name="Target6" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="6"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -377,6 +391,8 @@
                                             <Button x:Name="Target7" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="7"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -409,6 +425,8 @@
                                             <Button x:Name="Target8" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="8"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -441,6 +459,8 @@
                                             <Button x:Name="Target9" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="9"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -473,6 +493,8 @@
                                             <Button x:Name="Target10" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="10"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -505,6 +527,8 @@
                                             <Button x:Name="Target11" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="11"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -537,6 +561,8 @@
                                             <Button x:Name="Target12" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="12"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -569,6 +595,8 @@
                                             <Button x:Name="Target13" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="13"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -601,6 +629,8 @@
                                             <Button x:Name="Target14" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="14"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -633,6 +663,8 @@
                                             <Button x:Name="Target15" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="15"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -665,6 +697,8 @@
                                             <Button x:Name="Target16" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="16"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -697,6 +731,8 @@
                                             <Button x:Name="Target17" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="17"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -729,6 +765,8 @@
                                             <Button x:Name="Target18" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="18"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>
@@ -761,6 +799,8 @@
                                             <Button x:Name="Target19" Style="{StaticResource ButtonStyle}"
                                         Background="LightGray"
                                         Click="TargetButton" Tag="19"
+                                                    MouseEnter="PreviewStart"
+                                        MouseLeave="PreviewEnd"
                                         ToolTip="Set item as target item" Width="32" Height="32" Padding="3,3,3,3">
                                                 <Image Source="/Icons/target-variant.png" />
                                             </Button>

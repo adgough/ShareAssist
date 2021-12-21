@@ -25,6 +25,7 @@ namespace ShareAssist
     public partial class MainWindow : Window
     {
         static Viewer viewer = new Viewer();
+        static Previewer previewer = new Previewer();
         public static MainWindow controlPanel;
 
         Env env = new Env { ViewerHeight = 360 };
@@ -327,6 +328,7 @@ namespace ShareAssist
                 viewer.Player.Visibility = Visibility.Collapsed;
                 viewer.ImagePlayer.Source = new BitmapImage(targetArray[currentTargetId]);
                 viewer.Player.LoadedBehavior = MediaState.Stop;
+
             };
             void playAudio()
             {
@@ -551,6 +553,21 @@ namespace ShareAssist
             helpLicense.Show();
         }
 
+        private void PreviewStart(object sender, MouseEventArgs e)
+        {
+            int tag = tagGetter(sender);
+            if(typesArray[tag] != "image") { return; }
+
+            previewer.image.Source = new BitmapImage(targetArray[tag]);
+            previewer.Show();
+            previewer.Left = this.Left;
+            previewer.Top = this.Top;
+        }
+        private void PreviewEnd(object sender, MouseEventArgs e)
+        {
+            previewer.Hide();
+            previewer.image.Source = null;
+        }
     }
     #endregion
 }
