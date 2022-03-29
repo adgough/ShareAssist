@@ -47,11 +47,10 @@
                     Panel.ZIndex="1"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch" Foreground="White" Background="Black" FontSize="24pt"
-                    Text='test text'
+                    Text='Sample text. Edit me, saves on exit!'
                     FontFamily="Book Antiqua" BorderBrush="{x:Null}" TextAlignment="Center"
-                    Padding="100"
-                    >
-                </TextBox>
+                    Padding="100" AcceptsReturn="True" Visibility="Hidden"
+                    />
             </Viewbox>
 
             <Label

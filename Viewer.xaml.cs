@@ -46,5 +46,7 @@ namespace ShareAssist
             ImagePlayer.Visibility = Visibility.Hidden;
             viewerText.Visibility = Visibility.Visible;
         }
+
+ 
     }
 }

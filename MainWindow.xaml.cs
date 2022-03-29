@@ -30,7 +30,7 @@ namespace ShareAssist
 
         Env env = new Env { ViewerHeight = 360 };
 
-        static Settings settings = new Settings();
+        public static Settings settings = new Settings();
 
 
 
@@ -57,7 +57,9 @@ namespace ShareAssist
                 string jsonText = File.ReadAllText("ShareAssist.json");
                 settings = JsonConvert.DeserializeObject<Settings>(jsonText);
                 env.ViewerHeight = int.Parse(settings.Size);
-                
+                viewer.viewerText.Text = settings.Text;
+                borderCheckbox.IsChecked = settings.BorderState;
+                textCheckbox.IsChecked = settings.TextState;
             }
             else
             {
@@ -66,9 +68,12 @@ namespace ShareAssist
 
         }
 
-        class Settings
+        public class Settings
         {
             public string Size { get; set; }
+            public string Text { get; set; }
+            public bool BorderState { get; set; }
+            public bool TextState { get; set; }
         }
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -77,6 +82,9 @@ namespace ShareAssist
         }
         private void Window_Closed(object sender, EventArgs e)
         {
+            settings.Text = viewer.viewerText.Text;
+            settings.BorderState = (bool)borderCheckbox.IsChecked;
+            settings.TextState = (bool)textCheckbox.IsChecked;
             string output = JsonConvert.SerializeObject(settings);
             File.WriteAllText("ShareAssist.json", output);
             Application.Current.Shutdown();
@@ -592,6 +600,16 @@ namespace ShareAssist
         private void borderCheckbox_Checked(object sender, RoutedEventArgs e)
         {
             viewer.viewerBorder.BorderThickness = new Thickness(1);
+        }
+
+        private void textCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            viewer.viewerText.Visibility = Visibility.Hidden;
+        }
+
+        private void textCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            viewer.viewerText.Visibility = Visibility.Visible;
         }
     }
     #endregion

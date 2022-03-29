@@ -123,10 +123,18 @@
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
-                        <CheckBox x:Name="fullScreenCheckbox" VerticalAlignment="Center" Checked="fullScreenCheckbox_Checked" Unchecked="fullScreenCheckbox_Unchecked"></CheckBox>
+                        <CheckBox x:Name="fullScreenCheckbox"
+                                  ToolTip="Check to make viewer window full screen on the monitor it's currently on."
+                                  VerticalAlignment="Center" Checked="fullScreenCheckbox_Checked" Unchecked="fullScreenCheckbox_Unchecked"></CheckBox>
                         <Label VerticalAlignment="Center">Full screen</Label>
-                        <CheckBox x:Name="borderCheckbox" IsChecked="True" VerticalAlignment="Center" Unchecked="borderCheckbox_Unchecked" Checked="borderCheckbox_Checked"></CheckBox>
+                        <CheckBox x:Name="borderCheckbox"
+                                  ToolTip="Toggle white border around viewer screen (useful if not full screen)."
+                                  IsChecked="True" VerticalAlignment="Center" Unchecked="borderCheckbox_Unchecked" Checked="borderCheckbox_Checked"></CheckBox>
                         <Label VerticalAlignment="Center">Show viewer border</Label>
+                        <CheckBox x:Name="textCheckbox"
+                                  ToolTip="Toggle editable text on blank screen."
+                                  IsChecked="False" VerticalAlignment="Center" Unchecked="textCheckbox_Unchecked" Checked="textCheckbox_Checked"></CheckBox>
+                        <Label VerticalAlignment="Center">Show text</Label>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
