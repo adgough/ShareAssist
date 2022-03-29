@@ -125,6 +125,8 @@
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="fullScreenCheckbox" VerticalAlignment="Center" Checked="fullScreenCheckbox_Checked" Unchecked="fullScreenCheckbox_Unchecked"></CheckBox>
                         <Label VerticalAlignment="Center">Full screen</Label>
+                        <CheckBox x:Name="borderCheckbox" IsChecked="True" VerticalAlignment="Center" Unchecked="borderCheckbox_Unchecked" Checked="borderCheckbox_Checked"></CheckBox>
+                        <Label VerticalAlignment="Center">Show viewer border</Label>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>

@@ -14,7 +14,7 @@
         Activated="Window_Activated" Icon="/Icons/targetWindow.png" 
         ShowInTaskbar="True"
         >
-    <Border BorderBrush="AliceBlue" BorderThickness="1">
+    <Border x:Name="viewerBorder" BorderBrush="AliceBlue" BorderThickness="1">
         
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             

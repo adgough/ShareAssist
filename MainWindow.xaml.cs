@@ -581,7 +581,15 @@ namespace ShareAssist
             viewer.WindowState = WindowState.Normal;
         }
 
-        
+        private void borderCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            viewer.viewerBorder.BorderThickness = new Thickness(0);
+        }
+
+        private void borderCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            viewer.viewerBorder.BorderThickness = new Thickness(1);
+        }
     }
     #endregion
 }
