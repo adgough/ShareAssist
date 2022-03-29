@@ -17,24 +17,42 @@
     <Border x:Name="viewerBorder" BorderBrush="AliceBlue" BorderThickness="1">
         
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            
 
+            
             <MediaElement x:Name="Player"
+                          Panel.ZIndex="3"
                           LoadedBehavior="Stop"
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch"
                           Margin="0,0,0,0"
                           Source=""
-                          Visibility="Visible" Canvas.Left="0"
+                          Visibility="Hidden" Canvas.Left="0" MediaEnded="Player_MediaEnded"
                           />
 
             <Image x:Name="ImagePlayer"
+                   Panel.ZIndex="2"
                    HorizontalAlignment="Stretch"
                    VerticalAlignment="Stretch"
                    Margin="0,0,0,0"
-                   Visibility="Visible"
+                   Visibility="Hidden"
                    Source="/Icons/play-circle.png">
             </Image>
+
+            <Viewbox
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                >
+                <TextBox
+                    x:Name="viewerText"
+                    Panel.ZIndex="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch" Foreground="White" Background="Black" FontSize="24pt"
+                    Text='test text'
+                    FontFamily="Book Antiqua" BorderBrush="{x:Null}" TextAlignment="Center"
+                    Padding="100"
+                    >
+                </TextBox>
+            </Viewbox>
 
             <Label
                 x:Name="Handle"
@@ -52,6 +70,7 @@
                 Cursor="ScrollAll"
                 ToolTip="Move viewer window (click-and-drag)" MouseLeftButtonDown="HandleDrag"
                 />
+            <Viewbox/>
 
         </Grid>
     </Border>

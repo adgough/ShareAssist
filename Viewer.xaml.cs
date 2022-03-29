@@ -39,5 +39,12 @@ namespace ShareAssist
                 MainWindow.controlPanel.ArmButton.Background = Brushes.LightGray;
             }
         }
+
+        private void Player_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            Player.Visibility = Visibility.Hidden;
+            ImagePlayer.Visibility = Visibility.Hidden;
+            viewerText.Visibility = Visibility.Visible;
+        }
     }
 }

@@ -308,6 +308,7 @@ namespace ShareAssist
         
         static public void Play()
         {
+            viewer.viewerText.Visibility = Visibility.Hidden;
             switch (typesArray[currentTargetId])
             {
                 case "video": { playVideo(); break; }
@@ -365,7 +366,9 @@ namespace ShareAssist
         private void StopButton(object sender, RoutedEventArgs e)
         {
             viewer.Player.LoadedBehavior = MediaState.Close;
+            viewer.Player.Visibility = Visibility.Hidden;
             viewer.ImagePlayer.Visibility = Visibility.Hidden;
+            viewer.viewerText.Visibility = Visibility.Visible;
 
         }
 
