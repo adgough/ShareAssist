@@ -17,6 +17,8 @@ namespace ShareAssist
 
         public void HandleDrag(object sender, MouseButtonEventArgs e)
         {
+            if (WindowState != WindowState.Normal) { WindowState = WindowState.Normal; };
+            MainWindow.controlPanel.fullScreenCheckbox.IsChecked = false;
             DragMove();
         }
         public void HandleShow(object sender, MouseEventArgs e)

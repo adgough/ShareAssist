@@ -10,8 +10,10 @@
         Closed="Window_Closed" Loaded="Window_Loaded"
         WindowStyle="None"
         ResizeMode="CanResize" Icon="targetWindow.png"
+        WindowStartupLocation="Manual"
     >
 
+    
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
@@ -68,57 +70,63 @@
                 </StackPanel>
             </Grid>
             <GroupBox Grid.Row="1" Header="Viewer Controls" Margin="5,5,5,5">
-                <Grid Margin="5,5,5,5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="auto"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-                    <MediaElement
-                            x:Name="mediaBG"
-                            Volume="0.125" LoadedBehavior="Play" Source="" Visibility="Collapsed" MediaEnded="PlayNextBG">
-                    </MediaElement>
+                        <MediaElement
+                                x:Name="mediaBG"
+                                Volume="0.125" LoadedBehavior="Play" Source="" Visibility="Collapsed" MediaEnded="PlayNextBG">
+                        </MediaElement>
 
-                    <StackPanel Grid.Column="0" Orientation="Horizontal">
-                        <Image Source="/Icons/image-size-select-large.png" Width="20" Height="20" Margin="0,0,5,0" />
-                        <TextBox ToolTip="Set viewer window height in pixels." VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text = "{Binding ViewerHeight, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="24"></TextBox>
-                        <Label VerticalContentAlignment="Center" Content="px"/>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <Image Source="/Icons/image-size-select-large.png" Width="20" Height="20" Margin="0,0,5,0" />
+                            <TextBox ToolTip="Set viewer window height in pixels." VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text = "{Binding ViewerHeight, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="24"></TextBox>
+                            <Label VerticalContentAlignment="Center" Content="px"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Button Style="{StaticResource ButtonStyle}"
+                                ToolTip="Target and play Previous item" Width="28" Height="28" Margin="0,0,5,0"
+                                Click="PrevButton">
+                                <Image Source="/Icons/skip-previous-circle.png" />
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}"
+                                ToolTip="Target and play Next item" Width="28" Height="28" Margin="0,0,5,0"
+                                Click="NextButton">
+                                <Image Source="/Icons/skip-next-circle.png" />
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}"
+                            Click="StopButton" Background="LightCoral"
+                            ToolTip="Stop video / Hide image" Width="28" Height="28" Margin="0,0,5,0">
+                                <Image Source="/Icons/stop-circle.png" />
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}"
+                            Click="PauseButton" Background="PaleGoldenrod"
+                            ToolTip="Pause/Play video." Width="28" Height="28" Margin="0,0,5,0">
+                                <Image Source="/Icons/play-pause.png" />
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}"
+                            Click="PlayButtonClick" Background="LightGreen"
+                            ToolTip="Play target item from start." Width="28" Height="28" Padding="3,3,3,3">
+                                <Image Source="/Icons/play-circle.png"/>
+                            </Button>
+                            <Button x:Name="ArmButton"
+                                Style="{StaticResource ButtonStyle}"
+                                Tag=""
+                                Click="ArmButtonClick" Background="LightGray"
+                                ToolTip="Toggle target item armed (plays when viewer window gains focus)." Width="28" Height="28" Padding="3,3,3,3" Margin="5,0,0,0">
+                                <Image Source="/Icons/send-clock.png" />
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox x:Name="fullScreenCheckbox" VerticalAlignment="Center" Checked="fullScreenCheckbox_Checked" Unchecked="fullScreenCheckbox_Unchecked"></CheckBox>
+                        <Label VerticalAlignment="Center">Full screen</Label>
                     </StackPanel>
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <Button Style="{StaticResource ButtonStyle}"
-                            ToolTip="Target and play Previous item" Width="28" Height="28" Margin="0,0,5,0"
-                            Click="PrevButton">
-                            <Image Source="/Icons/skip-previous-circle.png" />
-                        </Button>
-                        <Button Style="{StaticResource ButtonStyle}"
-                            ToolTip="Target and play Next item" Width="28" Height="28" Margin="0,0,5,0"
-                            Click="NextButton">
-                            <Image Source="/Icons/skip-next-circle.png" />
-                        </Button>
-                        <Button Style="{StaticResource ButtonStyle}"
-                        Click="StopButton" Background="LightCoral"
-                        ToolTip="Stop video / Hide image" Width="28" Height="28" Margin="0,0,5,0">
-                            <Image Source="/Icons/stop-circle.png" />
-                        </Button>
-                        <Button Style="{StaticResource ButtonStyle}"
-                        Click="PauseButton" Background="PaleGoldenrod"
-                        ToolTip="Pause/Play video." Width="28" Height="28" Margin="0,0,5,0">
-                            <Image Source="/Icons/play-pause.png" />
-                        </Button>
-                        <Button Style="{StaticResource ButtonStyle}"
-                        Click="PlayButtonClick" Background="LightGreen"
-                        ToolTip="Play target item from start." Width="28" Height="28" Padding="3,3,3,3">
-                            <Image Source="/Icons/play-circle.png"/>
-                        </Button>
-                        <Button x:Name="ArmButton"
-                            Style="{StaticResource ButtonStyle}"
-                            Tag=""
-                            Click="ArmButtonClick" Background="LightGray"
-                            ToolTip="Toggle target item armed (plays when viewer window gains focus)." Width="28" Height="28" Padding="3,3,3,3" Margin="5,0,0,0">
-                            <Image Source="/Icons/send-clock.png" />
-                        </Button>
-                    </StackPanel>
-                </Grid>
+                </StackPanel>
             </GroupBox>
             <TabControl Grid.Row="2" Margin="5,5,5,5">
                 <TabItem Header="Files" Width="110">

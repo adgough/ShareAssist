@@ -7,13 +7,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Input;
+using System.Windows.Threading;
 using NAudio.Wave;
 using System.Net;
-using System.Windows.Threading;
 using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Windows.Input;
 using Microsoft.VisualBasic.FileIO;
 using Newtonsoft.Json;
 
@@ -31,6 +31,7 @@ namespace ShareAssist
         Env env = new Env { ViewerHeight = 360 };
 
         static Settings settings = new Settings();
+
 
 
         public MainWindow()
@@ -568,6 +569,19 @@ namespace ShareAssist
             previewer.Hide();
             previewer.image.Source = null;
         }
+
+        private void fullScreenCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            viewer.WindowState = WindowState.Maximized;
+            
+        }
+
+        private void fullScreenCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            viewer.WindowState = WindowState.Normal;
+        }
+
+        
     }
     #endregion
 }
