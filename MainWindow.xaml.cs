@@ -41,6 +41,13 @@ namespace ShareAssist
             controlPanel = this;
             viewer.Show();
 
+
+            if (System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1)
+            {
+                randomiseColours();
+            }
+;
+
             viewer.Left = 10;
             viewer.Top = System.Windows.SystemParameters.WorkArea.Bottom - viewer.Height - 30;
             this.Left = 10 + viewer.Width + 10;
@@ -599,7 +606,7 @@ namespace ShareAssist
 
         private void borderCheckbox_Checked(object sender, RoutedEventArgs e)
         {
-            viewer.viewerBorder.BorderThickness = new Thickness(1);
+            viewer.viewerBorder.BorderThickness = new Thickness(2);
         }
 
         private void textCheckbox_Unchecked(object sender, RoutedEventArgs e)
@@ -610,6 +617,43 @@ namespace ShareAssist
         private void textCheckbox_Checked(object sender, RoutedEventArgs e)
         {
             viewer.viewerText.Visibility = Visibility.Visible;
+        }
+
+        private void ColourSwitch(object sender, MouseButtonEventArgs e)
+        {
+            randomiseColours();
+        }
+        
+        public void randomiseColours()
+        {
+            Color newColor = new Color();
+            Random colorValRand = new Random();
+            int rmin = 0;
+            int rmax = 150;
+            newColor.A = (byte)255;
+            int cR = colorValRand.Next(rmin, rmax);
+            int cG = colorValRand.Next(rmin, rmax);
+            int cB = colorValRand.Next(rmin, rmax);
+            newColor.R = (byte)cR;
+            newColor.G = (byte)cG;
+            newColor.B = (byte)cB;
+
+            SolidColorBrush brush = new SolidColorBrush(newColor);
+            ControllerBorder.BorderBrush = brush;
+            ControllerBackground.Background = brush;
+            
+            Color colorBrighter = new Color();
+            colorBrighter.A = (byte)255;
+            colorBrighter.R = (byte)(cR + 100);
+            colorBrighter.G = (byte)(cG + 100);
+            colorBrighter.B = (byte)(cB + 100);
+
+            SolidColorBrush lighterBrush = new SolidColorBrush(colorBrighter);
+            viewer.viewerBorder.BorderBrush = lighterBrush;
+            viewer.viewerBorder.BorderThickness = new Thickness(2);
+            viewer.Handle.Background = brush;
+
+
         }
     }
     #endregion

@@ -44,26 +44,32 @@
         </Style>
     </Window.Resources>
 
-    <Border BorderBrush="RoyalBlue" BorderThickness="1">
+    <Border Name="ControllerBorder" BorderBrush="RoyalBlue" BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="RoyalBlue">
+            <Grid Grid.Row="0" Name="ControllerBackground" Background="RoyalBlue">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label  Cursor="ScrollAll" ToolTip="Move controller window (click-and-drag)" Grid.Column="0" Foreground="White" MouseLeftButtonDown="HandleDrag">ShareAssist Controller</Label>
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
-                    <Border Cursor="Hand" Background="CadetBlue" CornerRadius="10" Width="25" Height="20" BorderThickness="0,0,5,0" MouseLeftButtonUp="HelpOpen">
-                    <TextBlock Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontWeight="Bold" LineHeight="Auto" Margin="0,0,0,2">?</TextBlock>
+                    <Border ToolTip="Switch control panel and viewer window accent colours." Cursor="Hand" Background="CadetBlue" CornerRadius="10" Width="25" Height="20" BorderThickness="0,0,5,0" MouseLeftButtonUp="ColourSwitch">
+                        <TextBlock Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontWeight="Bold" LineHeight="Auto" Margin="0,0,0,2">◐</TextBlock>
                     </Border>
                 </StackPanel>
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Border Cursor="Hand" Background="CadetBlue" CornerRadius="10" Width="25" Height="20" BorderThickness="0,0,5,0" MouseLeftButtonUp="HelpOpen">
+                        <TextBlock Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontWeight="Bold" LineHeight="Auto" Margin="0,0,0,2">?</TextBlock>
+                    </Border>
+                </StackPanel>
+                <StackPanel Grid.Column="3" Orientation="Horizontal">
                     <Border Cursor="Hand" Background="Red" CornerRadius="10" Width="25" Height="20" BorderThickness="0,0,5,0" MouseLeftButtonUp="CloseButton_MouseLeftButtonUp">
                         <TextBlock Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontWeight="Bold" LineHeight="Auto" Margin="0,0,0,2">⨉</TextBlock>
                     </Border>
