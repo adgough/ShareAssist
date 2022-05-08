@@ -128,20 +128,38 @@
                             </Button>
                         </StackPanel>
                     </Grid>
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox x:Name="fullScreenCheckbox"
+                    <WrapPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="fullScreenCheckbox"
                                   ToolTip="Check to make viewer window full screen on the monitor it's currently on."
                                   VerticalAlignment="Center" Checked="fullScreenCheckbox_Checked" Unchecked="fullScreenCheckbox_Unchecked"></CheckBox>
-                        <Label VerticalAlignment="Center">Full screen</Label>
-                        <CheckBox x:Name="borderCheckbox"
+                            <Label VerticalAlignment="Center">Full screen</Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="viewerCheckbox"
+                                      ToolTip="Toggle viewer window visibility."
+                                      IsChecked="False" VerticalAlignment="Center" Unchecked="viewerCheckbox_Unchecked" Checked="viewerCheckbox_Checked"></CheckBox>
+                            <Label VerticalAlignment="Center">Show viewer</Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="borderCheckbox"
                                   ToolTip="Toggle white border around viewer screen (useful if not full screen)."
-                                  IsChecked="True" VerticalAlignment="Center" Unchecked="borderCheckbox_Unchecked" Checked="borderCheckbox_Checked"></CheckBox>
-                        <Label VerticalAlignment="Center">Show viewer border</Label>
-                        <CheckBox x:Name="textCheckbox"
+                                  IsChecked="False" VerticalAlignment="Center" Unchecked="borderCheckbox_Unchecked" Checked="borderCheckbox_Checked"></CheckBox>
+                            <Label VerticalAlignment="Center">Viewer border</Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="textCheckbox"
                                   ToolTip="Toggle editable text on blank screen."
                                   IsChecked="False" VerticalAlignment="Center" Unchecked="textCheckbox_Unchecked" Checked="textCheckbox_Checked"></CheckBox>
-                        <Label VerticalAlignment="Center">Show text</Label>
-                    </StackPanel>
+                            <Label VerticalAlignment="Center">Viewer text</Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="wallPaperCheckbox"
+                                    ToolTip="Toggle sending images to desktop wallpaper when played."
+                                    IsChecked="False"  VerticalAlignment="Center"></CheckBox>
+                            <Label VerticalAlignment="Center">Images to desktop</Label>
+                        </StackPanel>
+                    </WrapPanel>
                 </StackPanel>
             </GroupBox>
             <TabControl Grid.Row="2" Margin="5,5,5,5">

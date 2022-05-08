@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualBasic.FileIO;
 using Newtonsoft.Json;
+using System.Runtime.InteropServices;
 
 namespace ShareAssist
 {
@@ -39,7 +40,6 @@ namespace ShareAssist
             InitializeComponent();
             this.DataContext = env;
             controlPanel = this;
-            viewer.Show();
 
 
             if (System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1)
@@ -67,6 +67,8 @@ namespace ShareAssist
                 viewer.viewerText.Text = settings.Text;
                 borderCheckbox.IsChecked = settings.BorderState;
                 textCheckbox.IsChecked = settings.TextState;
+                wallPaperCheckbox.IsChecked = settings.WallpaperState;
+                viewerCheckbox.IsChecked = settings.ViewerVisibility;
             }
             else
             {
@@ -81,6 +83,8 @@ namespace ShareAssist
             public string Text { get; set; }
             public bool BorderState { get; set; }
             public bool TextState { get; set; }
+            public bool WallpaperState { get; set; }
+            public bool ViewerVisibility {get; set;}
         }
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -92,6 +96,8 @@ namespace ShareAssist
             settings.Text = viewer.viewerText.Text;
             settings.BorderState = (bool)borderCheckbox.IsChecked;
             settings.TextState = (bool)textCheckbox.IsChecked;
+            settings.WallpaperState = (bool)wallPaperCheckbox.IsChecked;
+            settings.ViewerVisibility = (bool)viewerCheckbox.IsChecked;
             string output = JsonConvert.SerializeObject(settings);
             File.WriteAllText("ShareAssist.json", output);
             Application.Current.Shutdown();
@@ -343,10 +349,12 @@ namespace ShareAssist
             {
                 viewer.ImagePlayer.Visibility = Visibility.Visible;
                 viewer.Player.Visibility = Visibility.Collapsed;
+                Trace.WriteLine(controlPanel.wallPaperCheckbox.IsChecked);
                 viewer.ImagePlayer.Source = new BitmapImage(targetArray[currentTargetId]);
                 viewer.Player.LoadedBehavior = MediaState.Stop;
-
+                if (controlPanel.wallPaperCheckbox.IsChecked == true) { WallPaperSetter(targetArray[currentTargetId]); };
             };
+            
             void playAudio()
             {
                 viewer.ImagePlayer.Visibility = Visibility.Visible;
@@ -357,6 +365,24 @@ namespace ShareAssist
             }
 
         }
+
+        #region Wallpaper changing stuff
+        static void WallPaperSetter(Uri path)
+        {
+            string pathString = path.AbsolutePath;
+            Trace.WriteLine(pathString);
+            SetWallpaper(pathString);
+        }
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern Int32 SystemParametersInfo(UInt32 action, UInt32 uParam, String vParam, UInt32 winIni);
+        private static readonly UInt32 SPI_SETDESKWALLPAPER = 0x14;
+        private static readonly UInt32 SPIF_UPDATEINIFILE = 0x01;
+        private static readonly UInt32 SPIF_SENDWININICHANGE = 0x02;
+        public static void SetWallpaper(String path)
+        {
+            SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
+        }
+        #endregion
 
         private void ArmButtonClick(object sender, RoutedEventArgs e)
         {
@@ -652,8 +678,18 @@ namespace ShareAssist
             viewer.viewerBorder.BorderBrush = lighterBrush;
             viewer.viewerBorder.BorderThickness = new Thickness(2);
             viewer.Handle.Background = brush;
+        }
 
+        private void viewerCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //viewer.Visibility = Visibility.Hidden;
+            viewer.Hide();
+        }
 
+        private void viewerCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            //viewer.Visibility = Visibility.Visible;
+            viewer.Show();
         }
     }
     #endregion
