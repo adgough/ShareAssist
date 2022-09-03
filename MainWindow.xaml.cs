@@ -69,6 +69,8 @@ namespace ShareAssist
                 textCheckbox.IsChecked = settings.TextState;
                 wallPaperCheckbox.IsChecked = settings.WallpaperState;
                 viewerCheckbox.IsChecked = settings.ViewerVisibility;
+                blurCheckbox.IsChecked = settings.ImageBlur;
+
             }
             else
             {
@@ -84,7 +86,8 @@ namespace ShareAssist
             public bool BorderState { get; set; }
             public bool TextState { get; set; }
             public bool WallpaperState { get; set; }
-            public bool ViewerVisibility {get; set;}
+            public bool ViewerVisibility {get; set; }
+            public bool ImageBlur { get; set; }
         }
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -98,6 +101,7 @@ namespace ShareAssist
             settings.TextState = (bool)textCheckbox.IsChecked;
             settings.WallpaperState = (bool)wallPaperCheckbox.IsChecked;
             settings.ViewerVisibility = (bool)viewerCheckbox.IsChecked;
+            settings.ImageBlur = (bool)blurCheckbox.IsChecked;
             string output = JsonConvert.SerializeObject(settings);
             File.WriteAllText("ShareAssist.json", output);
             Application.Current.Shutdown();
@@ -340,6 +344,7 @@ namespace ShareAssist
             void playVideo()
             {
                 viewer.ImagePlayer.Visibility = Visibility.Collapsed;
+                viewer.ImagePlayerBlurred.Visibility = Visibility.Collapsed;
                 viewer.Player.Visibility = Visibility.Visible;
                 viewer.Player.Source = targetArray[currentTargetId];
                 viewer.Player.LoadedBehavior = MediaState.Play;
@@ -348,16 +353,18 @@ namespace ShareAssist
             void playImage()
             {
                 viewer.ImagePlayer.Visibility = Visibility.Visible;
+                viewer.ImagePlayerBlurred.Visibility = Visibility.Visible;
                 viewer.Player.Visibility = Visibility.Collapsed;
                 Trace.WriteLine(controlPanel.wallPaperCheckbox.IsChecked);
-                viewer.ImagePlayer.Source = new BitmapImage(targetArray[currentTargetId]);
+                viewer.ImagePlayer.Source = viewer.ImagePlayerBlurred.Source = new BitmapImage(targetArray[currentTargetId]);
                 viewer.Player.LoadedBehavior = MediaState.Stop;
-                if (controlPanel.wallPaperCheckbox.IsChecked == true) { WallPaperSetter(targetArray[currentTargetId]); };
+                //if (controlPanel.wallPaperCheckbox.IsChecked == true) { WallPaperSetter(targetArray[currentTargetId]); };
             };
             
             void playAudio()
             {
                 viewer.ImagePlayer.Visibility = Visibility.Visible;
+                viewer.ImagePlayerBlurred.Visibility = Visibility.Collapsed;
                 viewer.Player.Visibility = Visibility.Collapsed;
                 viewer.ImagePlayer.Source = new BitmapImage(new Uri("/Images/audio-graphic.png", UriKind.Relative));
                 viewer.Player.Source = targetArray[currentTargetId];
@@ -366,6 +373,7 @@ namespace ShareAssist
 
         }
 
+        /*
         #region Wallpaper changing stuff
         static void WallPaperSetter(Uri path)
         {
@@ -383,6 +391,7 @@ namespace ShareAssist
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
         }
         #endregion
+        */
 
         private void ArmButtonClick(object sender, RoutedEventArgs e)
         {
@@ -409,6 +418,7 @@ namespace ShareAssist
             viewer.Player.LoadedBehavior = MediaState.Close;
             viewer.Player.Visibility = Visibility.Hidden;
             viewer.ImagePlayer.Visibility = Visibility.Hidden;
+            viewer.ImagePlayerBlurred.Visibility = Visibility.Hidden;
             viewer.viewerText.Visibility = Visibility.Visible;
 
         }
@@ -690,6 +700,16 @@ namespace ShareAssist
         {
             //viewer.Visibility = Visibility.Visible;
             viewer.Show();
+        }
+
+        private void blurCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            viewer.ImagePlayerBlurred.Opacity = 1;
+        }
+
+        private void blurCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            viewer.ImagePlayerBlurred.Opacity = 0;
         }
     }
     #endregion

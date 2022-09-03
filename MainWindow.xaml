@@ -153,11 +153,17 @@
                                   IsChecked="False" VerticalAlignment="Center" Unchecked="textCheckbox_Unchecked" Checked="textCheckbox_Checked"></CheckBox>
                             <Label VerticalAlignment="Center">Viewer text</Label>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed">
                             <CheckBox x:Name="wallPaperCheckbox"
                                     ToolTip="Toggle sending images to desktop wallpaper when played."
                                     IsChecked="False"  VerticalAlignment="Center"></CheckBox>
                             <Label VerticalAlignment="Center">Images to desktop</Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="blurCheckbox"
+                                    ToolTip="Toggle background blur/black"
+                                    IsChecked="False"  VerticalAlignment="Center" Checked="blurCheckbox_Checked" Unchecked="blurCheckbox_Unchecked"></CheckBox>
+                            <Label VerticalAlignment="Center">Background blur</Label>
                         </StackPanel>
                     </WrapPanel>
                 </StackPanel>
